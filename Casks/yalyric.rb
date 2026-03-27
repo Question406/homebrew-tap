@@ -1,6 +1,6 @@
 cask "yalyric" do
   version "0.2.0"
-  sha256 "71c999aa041ec6c03db853c77d8715ec9e4fd77c9f48cca5d03529971a64abeb"
+  sha256 "079fbfd360cb9e31bf84cd790936b44b2c01ce67231325bfcfe1bf6350a6ba3c"
 
   url "https://github.com/Question406/yalyric/releases/download/v#{version}/yalyric-v#{version}-macos.zip"
   name "yalyric"
@@ -10,6 +10,10 @@ cask "yalyric" do
   depends_on macos: ">= :ventura"
 
   app "yalyric.app"
+
+  postflight do
+    system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/yalyric.app"]
+  end
 
   zap trash: [
     "~/Library/Preferences/com.yalyric.app.plist",
