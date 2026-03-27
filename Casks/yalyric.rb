@@ -1,6 +1,6 @@
 cask "yalyric" do
-  version "0.2.1"
-  sha256 "4291e4f78e8da61a5f9da1398bbdba35886067634643f98d138ccd97e54d8f42"
+  version "0.2.2"
+  sha256 "2020ea42d55fc23434d53dbd86bb3355a688e46fb94dd5f0d6255adc6495ac6e"
 
   url "https://github.com/Question406/yalyric/releases/download/v#{version}/yalyric-v#{version}-macos.zip"
   name "yalyric"
