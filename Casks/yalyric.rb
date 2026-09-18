@@ -7,12 +7,12 @@ cask "yalyric" do
   desc "Yet Another Lyric sync for Spotify and Apple Music on macOS"
   homepage "https://github.com/Question406/yalyric"
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "yalyric.app"
 
-  postflight do
-    system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/yalyric.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/yalyric.app"]
   end
 
   zap trash: [
